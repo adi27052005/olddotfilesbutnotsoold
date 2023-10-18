@@ -1,0 +1,18 @@
+* MIDSEM NOTES IP
+
+** Algorithm for finding Square Root of a number
+
+   @code python
+
+   x = int(input("Enter Number: "))
+   g = x/2
+   epsilon = 0.001
+   while abs(g*g-x) > epsilon:
+       g = 0.5*(g+(x/g))
+   print (g)
+
+   @end
+
+** Data Types
+   - Scalar Data e.g.: None, True, False, Int, Natural num, Float, Char
+   - Structured Data e.g.: String, List, Tuple, Dictionary, Array, Files

@@ -1,0 +1,31 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          	0.5
+bspc config borderless_monocle   	true
+bspc config gapless_monocle      	true
+bspc config focus_follows_pointer 	true
+
+# bspc rule -a Gimp desktop='^8' state=floating follow=on
+# bspc rule -a Chromium desktop='^2'
+# bspc rule -a mplayer2 state=floating
+# bspc rule -a Kupfer.py focus=on
+# bspc rule -a Screenkey manage=off
+bspc rule -a kitty-float desktop='^1' state=pseudo_tiled center=on rectangle=1000x800+300+100
+
+bspc config normal_border_color         "#666666"
+bspc config active_border_color         "#abb2bf"
+bspc config focused_border_color        "#abb2bf"
+bspc config presel_feedback_color       "#abb2bf"
+bspc config urgent_border_color         "#abb2bf"
+
+feh --bg-fill $HOME/Downloads/wallpapers/pixel-forest.jpg
+picom &
+$HOME/.config/bspwm/polybar/launch.sh
+xautolock -locker "i3lock -e -c 111111 -f " -time 5 -nowlocker i3lock -notify 30 -killer "sudo poweroff"

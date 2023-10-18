@@ -1,0 +1,2389 @@
+#+title: Notes for C++ Tutorial by Bro Code
+#+author: Aditya Gautam
+#+STARTUP: fold
+#+OPTIONS: results:output raw:t
+
+- NOTE: I am not sure why the code outputs as a table for multi line output but it isss what it iss
+https://www.cplusplus.com
+
+* Table Of Contents :toc:
+- [[#hello-world-program][Hello World Program]]
+- [[#multi-line-output][Multi Line Output]]
+- [[#comments][Comments]]
+- [[#data-types][Data Types]]
+  - [[#int][Int]]
+  - [[#other-data-types][Other data types]]
+- [[#constant][Constant]]
+- [[#namespaces][Namespaces]]
+  - [[#if-we-re-define-a-variable-it-would-give-an-error-because-each-entity-has-a-unique-identifier][If we re-define a variable, it would give an error because each entity has a unique identifier]]
+  - [[#however-we-can-define-identically-named-entities-as-long-as-the-namespaces-are-different][However, we can define identically named entities, as long as the namespaces are different]]
+  - [[#using-keyword-can-be-used-for-including-namespaces-eg]["using" keyword can be used for including namespaces e.g.:]]
+  - [[#to-prevent-std-to-include-all-its-functions][To prevent std to include all its functions...]]
+- [[#typedef][Typedef]]
+  - [[#syntax][Syntax]]
+  - [[#using-using-for-typedef][Using "using" for typedef]]
+- [[#arithmetic-operations][Arithmetic Operations]]
+- [[#type-conversion][Type Conversion]]
+  - [[#implicit-type-conversion][Implicit Type Conversion]]
+  - [[#explicity-type-conversion][Explicity Type Conversion]]
+- [[#input][Input]]
+- [[#important-math-functions][Important math functions]]
+  - [[#max-and-min][Max and Min]]
+  - [[#cmath][CMATH]]
+- [[#sample-project-to-find-hypotenuse][Sample project to find hypotenuse]]
+- [[#if-else-if-else][If, else if, else]]
+- [[#switch][Switch]]
+- [[#simple-calculator-using-switch][Simple Calculator using switch]]
+- [[#ternary-operator][Ternary Operator]]
+  - [[#odd-even-program-using-ternary-operator][Odd Even program using ternary operator]]
+  - [[#ternary-operation-for-bool-values][Ternary operation for bool values]]
+  - [[#even-more-minimalist-approach-to-the-above-code][Even More Minimalist Approach to the above code]]
+- [[#logical-operator][Logical Operator]]
+- [[#string-methods][String Methods]]
+  - [[#length][Length]]
+  - [[#empty][Empty]]
+  - [[#clear][Clear]]
+  - [[#append][Append]]
+  - [[#at][At]]
+  - [[#insert][Insert]]
+  - [[#find][Find]]
+  - [[#erase][Erase]]
+- [[#while-loop][While Loop]]
+- [[#do-while-loop][Do-While Loop]]
+- [[#for-loop][For Loop]]
+- [[#break-and-continue][Break And Continue]]
+- [[#nested-loops][Nested Loops]]
+- [[#pseudo-random-number][(Pseudo) Random Number]]
+- [[#random-event-generator][Random Event Generator]]
+- [[#random-number-guesser][Random Number Guesser]]
+- [[#functions][Functions]]
+  - [[#scope-in-context-of-functions][Scope in context of functions]]
+- [[#return][Return]]
+- [[#overloaded-functions][Overloaded Functions]]
+- [[#variable-scope][Variable Scope]]
+- [[#example-of-banking-system][Example of banking system]]
+- [[#rock-paper-scissor-game][Rock Paper Scissor game]]
+- [[#array][Array]]
+- [[#sizeof][Sizeof()]]
+  - [[#number-of-elements-in-an-array-using-sizeof][Number of elements in an array using sizeof()]]
+  - [[#parsing-through-the-array][Parsing through the array]]
+- [[#iterating-over-an-array][Iterating Over An Array]]
+- [[#foreach][Foreach]]
+- [[#array-as-function-argument][Array as function argument]]
+
+* Hello World Program
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+  	std::cout << "Hello World!" << std::endl;
+  	return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Hello World!
+
+* Multi Line Output
+
+- By default, Cpp does not enters a new line after each std::cout like python or any other high level language. So, we need to manually enter a new line either by using std::endl which clears the output buffer every single time executed (which might not be something that everyone wants) or just do '\n'.
+  
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+  	std::cout << "Line number 1";
+  	std::cout << "Line number 2";
+  	return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Line number 1Line number 2
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+  	std::cout << "Line number 1" << "\n";
+  	std::cout << "Line number 2" << "\n";
+  	return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Line number 1
+: Line number 2
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+  	std::cout << "Line number 1" << std::endl;
+  	std::cout << "Line number 2" << std::endl;
+  	return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Line number 1
+: Line number 2
+
+* Comments
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+  	// Single line comment
+  	std::cout << "Hello World!" << std::endl;
+  	return 0;
+  	/*
+  	this
+  	is 
+  	a
+  	multi
+  	line
+  	comment
+  	*/
+  }
+
+#+end_src
+
+#+RESULTS:
+: Hello World!
+
+- Multi line comments can also be written as:
+  /*
+  * something
+  * idk
+  */
+  
+* Data Types
+** Int
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+  	int age; // declaration
+  	age = 18; // assignment
+  	
+  	int age2 = 19; // declaration + assignment in the same line
+
+  	int something = 19.9; // this will truncate the output to int
+  	// output : 19
+  	// aka -> implicit type conversion
+      std::cout << something << std::endl;
+  	
+  	return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 19
+
+** Other data types
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          double price = 19.99;
+          char grade = 'A'; // Note: Use only single quotes
+          bool alive = false; // Boolean
+          bool student = true; // Note: use small caps : true false and not True False
+
+          std::string name = "Aditya Gautam"; // Note: Use Double quotes only
+          std::cout << name << "\n";
+          std::cout << student << "\n";
+          std::cout << alive << "\n";
+          std::cout << grade << "\n";
+          std::cout << price << "\n";
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Aditya Gautam
+: 1
+: 0
+: A
+: 19.99
+
+* Constant
+
+- =const= is used to make a variable "read only"
+- Its value cannot be changed after assignment
+- The normal naming convention of const is all upper case letters e.g.: PI
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+  	
+  	const double PI = 3.14;
+  	int radius = 10;
+
+  	std::cout << "Cicrumference: " << 2*PI*radius;
+  	
+
+  	return 0;
+  }
+  
+#+end_src
+
+#+RESULTS:
+: Cicrumference: 62.8
+
+* Namespaces
+** If we re-define a variable, it would give an error because each entity has a unique identifier
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+    int x = 5;
+    int x = 7;
+    std::cout << x;
+
+    return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+
+** However, we can define identically named entities, as long as the namespaces are different
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  namespace first{
+    int x = 1;
+  }
+  namespace second{
+    int x = 2;
+  }
+
+  int main(){
+
+    int x = 0;
+    std::cout << x << std::endl;
+    std::cout << first::x << std::endl;
+    std::cout << second::x << std::endl;
+
+    // :: means scope resolution operator
+
+    return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 0
+: 1
+: 2
+
+** "using" keyword can be used for including namespaces e.g.:
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  namespace first{
+          int x = 1;
+  }
+  namespace second{
+          int x = 2;
+  }
+
+  int main(){
+
+          using namespace first;
+          std::cout << x << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 1
+
+However...
+1. This wont work when "using" another namespace as well
+2. Also, there shouldn't by a global x already defined in main func
+3. Therefore, I personally would prefer using first::x or second::x
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+    using namespace std;
+    cout << "Hello World" << endl;
+
+    return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Hello World
+
+- But, im telling you, dont you ever dare use this method to include standard namespace library cus it includes all functions of this library and cus its just bad lol.
+
+** To prevent std to include all its functions...
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+    using std::cout;
+    using std::endl;
+
+    cout << "Hello World" << endl;
+
+    return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Hello World
+
+* Typedef
+** Syntax
+
+- Typedef is a reserved keyword used to create an additional alias for another data type. Helps with readability and reduces typo error
+
+- Naming Conventions: name_t
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  typedef std::string str_t;
+
+  int main (){
+
+          str_t name = "Aditya Gautam";
+          std::cout << name << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Aditya Gautam
+
+** Using "using" for typedef
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  using str_t = std::string;
+
+  int main (){
+
+          str_t name = "Aditya Gautam";
+          std::cout << name << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Aditya Gautam
+
+* Arithmetic Operations
+
+=NOTE: int divided by a number will truncate it  instead of rounding it up if its not perfectly divisible=
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main (){
+
+          int age = 18;
+
+          age += 1; // same as age = age + 1;
+          std::cout << age << std::endl;
+
+          age ++; // same as age = age + 1;
+          std::cout << age << std::endl;
+
+          age -= 1; // same as age = age - 1;
+          std::cout << age << std::endl;
+
+          age --; // same as age = age - 1;
+          std::cout << age << std::endl;
+
+          age *= 2; // same as age = age * 2;
+          std::cout << age << std::endl;
+	
+          age /= 2; // same as age = age / 2;
+          std::cout << age << std::endl;
+
+          double num = 33;
+          num /= 5;
+          std::cout << num << std::endl;
+
+          int num2 = 33;
+          num2 /= 5;
+          std::cout << num2 << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 19
+: 20
+: 19
+: 18
+: 36
+: 18
+: 6.6
+: 6
+
+* Type Conversion
+
+- Type conversion means converting a value of one date type to other.
+- It can be done in two ways
+  1. =Implicit=: Automatic
+  2. =Explicit=: Precede value with the new data type
+
+** Implicit Type Conversion
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main (){
+
+          int x = 3.14;
+          std::cout << x << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 3
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main (){
+
+          char x = 100;
+          std::cout << x << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: d
+
+- Here, implicitly changed the value from int to char using the ascii values
+
+** Explicity Type Conversion
+
+#+begin_src cpp :results output
+  
+  #include <iostream>
+
+  int main (){
+
+          double x = (int) 3.14;
+          std::cout << x << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 3
+
+- Here, explicitly changed the floating value to int and stored in a double
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main (){
+
+          std::cout << (char) 100 << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: d
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main (){
+
+          int correct = 8;
+          int questions = 10;
+
+          std::cout << correct / questions * 100 << "%" << std::endl;
+          std::cout << (double)correct / questions * 100 << "%" << std::endl;
+          std::cout << correct / (double)questions * 100 << "%" << std::endl;
+          std::cout << (double)correct / (double)questions * 100 << "%" << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 0%
+: 80%
+: 80%
+: 80%
+
+- Here, the first std::cout output statement returns 0 because int division is taking place i.e. it truncates the value before multiplication with 100
+
+- However, in the other output statements, explicityly converting any one or both variables, changes it to double division and that is why we are getting the expected output.
+
+* Input
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main (){
+
+          std::string name;
+
+          std::cout << "Enter Your Name: ";
+          std::cin >> name;
+
+          std::cout << name << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Enter Your Name: 
+
+- The problem with this method is that it will show only the first word if you enter a multi-word input
+e.g: if you enter "Aditya Gautam", only "Aditya" will be stored in the variable "name"
+
+- To counter this, we use std::getline(std::cin, <variable_name>)
+
+#+begin_src cpp :results output
+
+#include <iostream>
+
+int main (){
+
+	std::string name;
+
+	std::cout << "Enter Your Name: ";
+	std::getline(std::cin, name);
+
+	std::cout << name << std::endl;
+
+	return 0;
+}
+
+#+end_src
+
+#+RESULTS:
+: Enter Your Name: 
+
+- Now we face another problem. We cannot use std::getline after std::cin anywhere in the main function because std::cin by default, gives \n at end and it somehow messes with std::getline. To counter this problem, we use std::getline(std::cin >> std::ws, <var_name>);
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main (){
+
+          std::string firstname;
+
+          std::cout << "Enter Your firstname: ";
+          std::cin >>  firstname;
+
+          std::cout << firstname << std::endl;
+
+          std::string fullname;
+
+          std::cout << "Enter Your fullname: ";
+          std::getline(std::cin >> std::ws, fullname);
+
+          std::cout << fullname << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Enter Your firstname: 
+: Enter Your fullname: 
+
+* Important math functions
+** Max and Min
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          double x = 3;
+          double y = 4;
+
+          std::cout << std::max(x,y) << std::endl;
+          std::cout << std::min(x,y) << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 4
+: 3
+
+** CMATH
+http://www.cplusplus.com/reference/cmath/
+
+*** Pow
+#+begin_src cpp :results output
+
+  #include <iostream>
+  #include <cmath>
+
+  int main(){
+          std::cout << pow(2,3) << std::endl;
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 8
+
+*** Sqrt
+#+begin_src cpp :results output
+
+  #include <iostream>
+  #include <cmath>
+
+  int main(){
+          std::cout << sqrt(2) << std::endl;
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 1.41421
+
+*** Abs
+#+begin_src cpp :results output
+
+  #include <iostream>
+  #include <cmath>
+
+  int main(){
+          std::cout << abs(-2) << std::endl;
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 2
+
+*** Round
+#+begin_src cpp :results output
+
+  #include <iostream>
+  #include <cmath>
+
+  int main(){
+          std::cout << round(3.3) << std::endl;
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 3
+
+*** Ceil
+#+begin_src cpp :results output
+
+  #include <iostream>
+  #include <cmath>
+
+  int main(){
+          std::cout << ceil(3.00001) << std::endl;
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 4
+
+*** Floor
+#+begin_src cpp :results output
+
+  #include <iostream>
+  #include <cmath>
+
+  int main(){
+          std::cout << floor(3.9999) << std::endl;
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 3
+
+* Sample project to find hypotenuse
+#+begin_src cpp :results output
+
+  #include <iostream>
+  #include <cmath>
+
+  int main(){
+
+          double a = 3;
+          double b = 4;
+          double c;
+
+          /*
+          std::cout << "Enter the first side: ";
+          std::cin >> a;
+
+          std::cout << "Enter the second side: ";
+          std::cin >> b;
+          */
+
+          std::cout << "The hypotenuse is: " << sqrt(pow(a,2) + pow(b,2)) << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: The hypotenuse is: 5
+
+* If, else if, else
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          int age = 18;
+
+          if (age < 18){
+                  std::cout << "You are a child L" << std::endl;
+          }
+          else if (age == 60){
+                  std::cout << "Dobby is a free elf" << std::endl;
+          }
+          else if (age > 100){
+                  std::cout << "congrats homie, you got this" << std::endl;
+          }
+          else{
+                  std::cout << "Boring, next" << std::endl;
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+| Boring | next |
+
+* Switch
+- Alternative to using many if-else
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          int month = 12;
+          // std::cout << "Enter the number corresponding to the month (1-12): ";
+          // std::cin >> month;
+
+          switch(month){
+                  case 1:
+                          std::cout << "January" << std::endl;
+                          break;
+                  case 2:
+                          std::cout << "February" << std::endl;
+                          break;
+                  case 3:
+                          std::cout << "March" << std::endl;
+                          break;
+                  case 4:
+                          std::cout << "April" << std::endl;
+                          break;
+                  case 5:
+                          std::cout << "May" << std::endl;
+                          break;
+                  case 6:
+                          std::cout << "June" << std::endl;
+                          break;
+                  case 7:
+                          std::cout << "July" << std::endl;
+                          break;
+                  case 8:
+                          std::cout << "August" << std::endl;
+                          break;
+                  case 9:
+                          std::cout << "September" << std::endl;
+                          break;
+                  case 10:
+                          std::cout << "October" << std::endl;
+                          break;
+                  case 11:
+                          std::cout << "November" << std::endl;
+                          break;
+                  case 12:
+                          std::cout << "December" << std::endl;
+                          break;
+                  default:
+                          std::cout << "Invalid Number! Enter from 1-12" << std::endl;
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: December
+
+* Simple Calculator using switch
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+    /*
+          char operatorSign;
+          std::cout << "Enter operator ( + - * / ): ";
+          std::cin >> operatorSign;
+
+          int num1;
+          std::cout << "Enter first number: ";
+          std::cin >> num1;
+          int num2;
+          std::cout << "Enter second number: ";
+          std::cin >> num2;
+    ,*/
+
+          char operatorSign = '+';
+          int num1 = 3;
+          int num2 = 4;
+
+          switch(operatorSign){
+                  case '+':
+                          std::cout << num1 + num2 << std::endl;
+                          break;
+                  case '-':
+                          std::cout << num1 - num2 << std::endl;
+                          break;
+                  case '*':
+                          std::cout << num1 * num2 << std::endl;
+                          break;
+                  case '/':
+                          std::cout << num1 / num2 << std::endl;
+                          break;
+                  default:
+                          std::cout << "Invalid Operation!" << std::endl;
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 7
+
+* Ternary Operator
+
+- Ternary Operator ?: is a simplistic and minimal replacement to if/else statements
+- condition ? expression 1 : expression 2; 
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          int grade = 75;
+
+          if (grade < 60){
+                  std::cout << "You Failed!" << std::endl;
+          }
+          else{
+                  std::cout << "You Passed!" << std::endl;
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: You Passed!
+
+Lets convert this if else to a simplistic one-line equation for ternary operator
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          int grade = 75;
+
+          grade < 60 ? std::cout << "You Failed!" << std::endl : std::cout << "You Passed!" << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: You Passed!
+
+** Odd Even program using ternary operator
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          int num = 75;
+
+          num % 2 == 0 ? std::cout << "Even" << std::endl : std::cout << "Odd" << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Odd
+
+** Ternary operation for bool values
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          bool student = false;
+
+          student ? std::cout << "Noice" << std::endl : std::cout << "L" << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: L
+
+** Even More Minimalist Approach to the above code
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          bool student = false;
+
+          std::cout << (student ? "Noice\n" : "L\n");
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: L
+
+* Logical Operator
+
+- && : And
+- || : Or
+- |  : Not
+
+#+begin_src cpp :results output
+
+   #include <iostream>
+
+  int main (){
+
+          int temp = -1;
+          bool hot = false;
+
+          if (temp > 0 && temp < 35){
+                  std::cout << "Goog Temp" << std::endl;
+          }
+          else if (temp < 0 || temp > 35){
+                  std::cout << "Bad Temp" << std::endl;
+          }
+          if (!hot){
+                  std::cout << "Cold weather" << std::endl;
+          }
+
+          return 0;
+  }
+  
+#+end_src
+
+#+RESULTS:
+| Bad  | Temp    |
+| Cold | weather |
+
+* String Methods
+** Length
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          std::string name = "Aditya Gautam";
+
+          std::cout << name.length() << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 13
+
+** Empty
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          std::string name = "Aditya Gautam";
+          std::cout << name.empty() << std::endl;
+          name = "";
+          std::cout << name.empty() << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+| 0 |
+| 1 |
+
+- Returns a bool value of 0 if string is empty or 1 if its not empty
+
+** Clear
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          std::string str = "somethingidk123";
+          std::cout << str << std::endl;
+          str.clear();
+          std::cout << str << std::endl;
+          str = "somethingelse123";
+          std::cout << str << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+| somethingidk123  |
+|                  |
+| somethingelse123 |
+
+- Empties the string
+
+** Append
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          std::string mail = "somethingidk123";
+          mail.append("@iiitd.ac.in");
+          std::cout << mail << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: somethingidk123@iiitd.ac.in
+
+** At
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          std::string something = "abcdefg";
+          std::cout << something.at(0) << std::endl;
+          std::cout << something.at(6) << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+| a |
+| g |
+
+- -1 and anything > len(something) will not work as arg to this method
+
+** Insert
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          std::string mail = "somethingidk123gmail.com";
+          mail.insert(15,"@");
+          std::cout << mail << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: somethingidk123@gmail.com
+
+- Note: Here, the char "@" is inserted to the left of the existing 14th char "g" i.e. "@" is now the 14th character in the string mail
+
+** Find
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          std::string mail = "somethingidk123@gmail.com";
+          std::cout << mail.find("@") << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 15
+
+- Returns the index of the first occurence of the argument
+
+** Erase
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          std::string mail = "somethingidk123@gmail.com";
+          mail.erase(2,3);
+          std::cout << mail << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+- Note: mail.erase(2,3) does not imply erasing from index 2 to 3
+  It means to erase 3 characters from the 2nd index
+  i.e., here, we remove 3 characters (met) from the 2nd index (m)
+
+* While Loop
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          int num = 10;
+
+          while (num >= 0){
+                  std::cout << num << std::endl;
+                  num --;
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+| 10 |
+|  9 |
+|  8 |
+|  7 |
+|  6 |
+|  5 |
+|  4 |
+|  3 |
+|  2 |
+|  1 |
+|  0 |
+
+* Do-While Loop
+- It runs the code block inside loop once even if the condition is not met
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          int num;
+
+          while(num < 0){
+                  std::cout << "Enter a positive number: ";
+                  std::cin >> num;
+          }
+
+          return 0;
+  }
+
+#+end_src
+- This code does not work as intended.
+  This is because when declaring an integer, it assigns a value of 0 until further assigned any value.
+- To combat this, we use do-while, such that it runs the code once and then takes into consideration the condition
+- A work around with while loop could be to assign -1 to the integer num
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          int num;
+
+          do{
+                  std::cout << "Enter positive number: ";
+                  std::cin >> num;
+          }while(num < 0);
+
+          return 0;
+  }
+
+#+end_src
+
+* For Loop
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          for(int i = 1; i <= 10; i++){
+                  std::cout << i << std::endl;
+          }
+
+          return 0;
+  }
+
+#+end_src
+- For loop contains 3 conditions
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          for(int i = 0; i <= 9; i+=3){
+                  std::cout << i << std::endl;
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          for(int i = 10; i > 0; i--){
+                  std::cout << i << std::endl;
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+* Break And Continue
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          for (int i=0; i <= 10; i++){
+
+                  if ( i == 4 ){
+                          continue;
+                  }
+                  else if ( i == 9 ){
+                          break;
+                  }
+                  std::cout << i << std::endl;
+                  
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+| 0 |
+| 1 |
+| 2 |
+| 3 |
+| 5 |
+| 6 |
+| 7 |
+| 8 |
+
+- Continue keyword skips the iteration where i is 4 and breaks out of the for loop when i is 9
+
+* Nested Loops
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          for ( int i=0; i <= 3; i++ ){
+                  for ( int j=9; j >= 0; j-- ){
+                          std::cout << j;
+                  }
+                  std::cout << std::endl;
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+| 9876543210 |
+| 9876543210 |
+| 9876543210 |
+| 9876543210 |
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          int row;
+          int column;
+          char character;
+
+          std::cout << "Rows: ";
+          std::cin >> row;
+          std::cout << "Columns: ";
+          std::cin >> column;
+
+          std::cout << "Character: ";
+          std::cin >> character;
+
+          for (int i=1; i <= row; i++){
+                  for (int j=1; j <= column; j++){
+                          std::cout << character;
+              }
+                  std::cout << std::endl;
+          }
+
+
+          return 0;
+  }
+
+#+end_src
+
+* (Pseudo) Random Number
+#+begin_src cpp :results output
+
+  #include <iostream>
+  #include <ctime>
+
+  int main(){
+
+          srand(time(NULL));
+
+          for (int i = 0; i <= 6; i++){
+                std::cout << rand()%6+1 << std::endl;
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+| 1 |
+| 6 |
+| 5 |
+| 5 |
+| 1 |
+| 3 |
+| 1 |
+
+* Random Event Generator
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          srand(time(NULL));
+          int randNum = rand() % 5 + 1;
+	
+          switch(randNum){
+                  case 1: std::cout << "Python" << std::endl; break;
+                  case 2: std::cout << "Cpp" << std::endl; break;
+                  case 3: std::cout << "Java" << std::endl; break;
+                  case 4: std::cout << "Haskell" << std::endl; break;
+                  case 5: std::cout << "Csharp" << std::endl; break;
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Haskell
+
+* Random Number Guesser
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          int num;
+          int guess;
+          int tries = 0;
+
+          int limit;
+          std::cout << "Enter the upper limit: ";
+          std::cin >> limit;
+
+          srand(time(NULL));
+          num = rand()%limit+1;
+
+          do{
+                  std::cout << "Enter your guess: ";
+                  std::cin >> guess;
+
+                  tries ++;
+
+                  if (guess == num){
+                          std::cout << "It took you " << tries << " tries to guess the number!" << std::endl;
+                  }
+                  else if (guess > num){
+                          std::cout << "Too High!" << std::endl;
+                  }
+                  else if (guess < num){
+                          std::cout << "Too Low!" << std::endl;
+                  }
+
+          }while(guess != num);
+
+          return 0;
+  }
+
+#+end_src
+
+* Functions
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  void no(){
+          std::cout << "No" << std::endl;
+  }
+  std::string yes(){
+          return "no L";
+  }
+
+  int main(){
+
+          no();
+          std::cout << yes() << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+| No |   |
+| no | L |
+
+- You cannot declare a function after the main function
+- But you can assign the function after main if you define it beforehand
+
+** Scope in context of functions
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  void L();
+
+  int main(){
+
+          L();
+          return 0;
+  }
+
+  void L(){
+          std::cout << "L" << std::endl;
+  }
+
+#+end_src
+
+#+RESULTS:
+: L
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  void greeting();
+
+  int main(){
+
+          std::string name = "somethingidk123";
+          greeting();
+
+          return 0;
+  }
+
+  void greeting(){
+          std::cout << "Sup " << name << std::endl;
+  }
+
+#+end_src
+
+- This gives an error because name is locally defined and cannot be called in another function (here, greeting()) unless it is globally defined or called in as an argument to the function.
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  void greeting(std::string name);
+
+  int main(){
+
+          std::string name = "somethingidk123";
+          greeting(name);
+
+          return 0;
+  }
+
+  void greeting(std::string name){
+          std::cout << "Sup " << name << std::endl;
+  }
+
+#+end_src
+
+#+RESULTS:
+: Sup somethingidk123
+
+* Return
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  double area(double length);
+  double cube(double length);
+
+  int main(){
+
+          std::cout << area(5) << std::endl;
+          std::cout << cube(5) << std::endl;
+
+          return 0;
+  }
+
+  double area(double length){
+          return length*length;
+  }
+
+  double cube(double length){
+          return length*length*length;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 25
+: 125
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  std::string fullName(std::string firstName, std::string lastName);
+
+  int main(){
+
+          std::string first = "something";
+          std::string last = "idk123";
+
+          std::cout << fullName(first, last) << std::endl;
+
+          return 0;
+  }
+
+  std::string fullName(std::string firstName, std::string lastName){
+          return firstName + " " + lastName;
+  }
+
+#+end_src
+
+#+RESULTS:
+: something idk123
+
+* Overloaded Functions
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  void something();
+  void something(std::string);
+  void something(std::string, int);
+  void something(std::string, bool);
+
+  int main(){
+
+          something();
+          something("Something");
+          something("idk",3);
+          something("123", false);
+
+          return 0;
+  }
+
+  void something(){ std::cout << "No arg" << std::endl; }
+  void something(std::string){ std::cout << "Single String" << std::endl; }
+  void something(std::string, int){  std::cout << "One string and one integer" << std::endl; }
+  void something(std::string, bool){ std::cout << "One string and one boolean" << std::endl; }
+
+#+end_src
+
+#+RESULTS:
+: No arg
+: Single String
+: One string and one integer
+: One string and one boolean
+
+- Note: this function has 4 overloads
+- Functions can have the same name but not same args
+- =function + args = function signature=
+
+* Variable Scope
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  void printNum();
+
+  int main(){
+
+          int myNum = 3;
+          std::cout << myNum << std::endl;
+
+          return 0;
+  }
+  void printNum(){
+          std::cout << myNum << std::endl;
+  }
+
+#+end_src
+
+#+RESULTS:
+
+- This program gives an error because the variable myNum is locally defined in the main function and therefore can only be called inside that function.
+
+- To combat this, we put the variable as an argument to the function in the function declaration and when we call the function.
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  void printNum(int myNum);
+
+  int main(){
+
+          int myNum = 3;
+          std::cout << myNum << std::endl;
+
+          printNum(myNum);
+
+          return 0;
+  }
+  void printNum(int myNum){
+          std::cout << myNum << std::endl;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 3
+: 3
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int myNum = 1;
+  void printNum();
+
+  int main(){
+
+          int myNum = 3;
+          std::cout << myNum << std::endl;
+
+          printNum();
+
+          return 0;
+  }
+  void printNum(){
+          std::cout << myNum << std::endl;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 3
+: 1
+
+- We can also globally define the variable outside any function and that would work but its best not to do that since it pollutes the global namespace.
+
+- One more thing to remember is, that a function prioritizes local vars before global counterparts.
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int myNum = 1;
+  void printNum();
+
+  int main(){
+
+          int myNum = 3;
+          std::cout << myNum << std::endl;
+
+          printNum();
+
+          return 0;
+  }
+  void printNum(){
+          int myNum = 2;
+          std::cout << myNum << std::endl;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 3
+: 2
+
+- However, if you WANT to use the global variable in this instance, we can use the scope resolution operator (::)
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int myNum = 1;
+  void printNum();
+
+  int main(){
+
+          int myNum = 3;
+          std::cout << ::myNum << std::endl;
+
+          printNum();
+
+          return 0;
+  }
+  void printNum(){
+          int myNum = 2;
+          std::cout << ::myNum << std::endl;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 1
+: 1
+
+* Example of banking system
+
+=Things To Note=
+
+- We included the header file iomanip for showing 2 decimal places in the variable balance by default.
+
+- idk why the input flush clearing is not working, so the program bugs out when you enter a character in the input
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+  #include <iomanip>
+
+  void showBalance(double Balance);
+  double deposit();
+  double withdraw(double Balance);
+
+  int main(){
+
+          double balance = 123;
+          int choice = 0;
+
+          do{
+
+                  std::cout << "\n" << "---" << "\n";
+                  std::cout << "1. Show Balance" << "\n";
+                  std::cout << "2. Deposit Money" << "\n";
+                  std::cout << "3. Withdraw Money" << "\n";
+                  std::cout << "4. Exit" << "\n";
+                  std::cout << "---" << "\n\n";
+                  std::cout << "Enter Your Choice > ";
+                  std::cin >> choice;
+
+                  std::cin.clear();
+                  fflush(stdin);
+                  // this will clear the input buffer 
+                  // and will prevent our program from breaking when we type a character in input
+
+                  switch (choice) {
+		
+                          case 1: showBalance(balance); break;
+                          case 2: balance += deposit(); showBalance(balance); break;
+                          case 3: balance -= withdraw(balance); showBalance(balance); break;
+                          case 4: std::cout << "Thank You! Exiting..." << "\n\n"; break;
+                          default: std::cout << "Invalid Choice!" << "\n";
+
+                  }
+          }while( choice != 4 );
+
+          return 0;
+  }
+  void showBalance(double Balance){
+          std::cout << "You Balance is > " << std::setprecision(2) << std::fixed << Balance;
+  }
+  double deposit(){
+          double amount = 0;
+          std::cout << "Enter amount to be deposited > ";
+          std::cin >> amount;
+          if (amount > 0){
+                  return amount;
+          }
+          else{
+                  std::cout << "That is not a valid amount!" << "\n";
+                  return 0;
+          }
+  }
+  double withdraw(double Balance){
+          double amount = 0;
+          std::cout << "Enter amount to be withdrawn > ";
+          std::cin >> amount;
+          if (amount <= Balance){
+                  return amount;
+          }
+          else if (amount < 0){
+                  std::cout << "Not a valid amount!" << "\n";
+                  return 0;
+          }
+          else{
+                  std::cout << "Insufficient Funds!" << "\n";
+                  return 0;
+          }
+  }
+
+#+end_src
+
+* Rock Paper Scissor game
+#+begin_src cpp :results output
+
+  #include <iostream>
+  #include <ctime>
+
+  char getUserChoice();
+  char getComputerChoice();
+  void showChoice(char choice);
+  void chooseWinner(char player, char computer);
+
+  int main(){
+
+          char player;
+          char computer;
+
+          player = getUserChoice();
+          std::cout << "\n" << "Your Choice > ";
+          showChoice(player);
+
+          computer = getComputerChoice();
+          std::cout << "The Computer's Choice > ";
+          showChoice(computer);
+
+          chooseWinner(player, computer);
+
+          return 0;
+  }
+
+  char getUserChoice(){
+
+          char player;
+          std::cout << "---" << "\n";
+          std::cout << "Rock-Paper-Scissors Game!" << "\n";
+
+          do{
+
+                  std::cout << "---" << "\n";
+                  std::cout << "< r > for rock" << "\n";
+                  std::cout << "< p > for paper" << "\n";
+                  std::cout << "< s > for scissors" << "\n";
+                  std::cout << "< q > for quit" << "\n";
+                  std::cout << "---" << "\n";
+                  std::cout << "Enter your choice > ";
+                  std::cin >> player;
+
+          }while( player != 'r' && player != 'p' && player != 's' );
+
+          return player;
+
+  }
+  char getComputerChoice(){
+
+          srand(time(NULL));
+
+          int num = rand() % 3 + 1;
+
+          switch (num) {
+                  case 1: return 'r';
+                  case 2: return 'p';
+                  case 3: return 's';
+          }
+          return 0;
+  }
+  void showChoice(char choice){
+
+          switch (choice) {
+	
+                  case 'r': std::cout << "Rock\n\n"; break;
+                  case 'p': std::cout << "Paper\n\n"; break;
+                  case 's': std::cout << "Scissor\n\n"; break;
+
+          }
+
+  }
+  void chooseWinner(char player, char computer){
+
+          switch(player){
+                  case 'r': 
+
+                          if(computer == 'r'){
+                                  std::cout << "Tie!" << "\n";
+                          }
+                          else if(computer == 'p'){
+                                  std::cout << "You Lose!" << "\n";
+                          }
+                          else{
+                                  std::cout << "You Win!" << "\n";
+                          }
+                          break;
+
+                  case 'p': 
+
+                          if(computer == 'p'){
+                                  std::cout << "Tie!" << "\n";
+                          }
+                          else if(computer == 's'){
+                                  std::cout << "You Lose!" << "\n";
+                          }
+                          else{
+                                  std::cout << "You Win!" << "\n";
+                          }
+                          break;
+
+                  case 's': 
+
+                          if(computer == 's'){
+                                  std::cout << "Tie!" << "\n";
+                          }
+                          else if(computer == 'r'){
+                                  std::cout << "You Lose!" << "\n";
+                          }
+                          else{
+                                  std::cout << "You Win!" << "\n";
+                          }
+                          break;
+          }
+          std::cout << "\n";
+
+  }
+
+#+end_src
+
+* Array
+
+- A data structure that can hold multiple values
+- Values are accessed by an index number
+- If we try to simple print the var of array, it gives the memory address
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          std::string car[] = { "corvette", "camry", "brezza", "mustang" };
+          car[0] = "camaro";
+
+          std::cout << car[0] << "\n";
+          std::cout << car[1] << "\n";
+          std::cout << car[2] << "\n";
+          std::cout << car[3] << "\n";
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: camaro
+: camry
+: brezza
+: mustang
+
+- Declaring and assigning in different lines
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          std::string car[3];
+
+          car[0] = "camaro";
+          car[1] = "camry";
+          car[2] = "mustang";
+
+          std::cout << car[0] << "\n";
+          std::cout << car[1] << "\n";
+          std::cout << car[2] << "\n";
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: camaro
+: camry
+: mustang
+
+* Sizeof()
+
+- Determines the size in bytes of a variable, datatype, class, objects etc.
+
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+	
+          double price = 1.99;
+          int num = 1;
+          bool student = true;
+          std::string name = "Aditya Gautam";
+          std::string arr[3] = { "one", "two", "three" };
+
+          std::cout << sizeof(name) << std::endl;
+          std::cout << sizeof(num) << std::endl;
+          std::cout << sizeof(price) << std::endl;
+	
+          std::cout << sizeof(std::string) << std::endl;
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 32
+: 4
+: 8
+: 32
+
+std::string just holds the memory address of where the value is stored i.e. 32 bits are max to store a memory address for a string
+
+** Number of elements in an array using sizeof()
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+	
+          std::string arr[3] = { "one", "two", "three" };
+
+          std::cout << sizeof(arr)/sizeof(std::string) << std::endl;
+          std::cout << sizeof(arr)/sizeof(arr[0]) << std::endl;
+	
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: 3
+: 3
+
+** Parsing through the array
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          std::string student[4] = {"aditya", "2023043", "EVE", "BTECH"};
+
+          for ( int i=0; i<(sizeof(student)/sizeof(std::string)); i++ ){
+                  std::cout << student[i] << std::endl;
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: aditya
+: 2023043
+: EVE
+: BTECH
+
+* Iterating Over An Array
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          std::string student[4] = {"aditya", "2023043", "EVE", "BTECH"};
+
+          for ( int i=0; i<(sizeof(student)/sizeof(std::string)); i++ ){
+                  std::cout << student[i] << std::endl;
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: aditya
+: 2023043
+: EVE
+: BTECH
+
+#+begin_src cpp :results output 
+
+  #include <iostream>
+
+  int main(){
+
+          std::string student[4] = {"aditya", "2023043", "EVE", "BTECH"};
+
+          for ( int i=0; i<(sizeof(student)/sizeof(std::string)); i++ ){
+                  if ( i==(sizeof(student)/sizeof(std::string)-1) ){
+                          std::cout << student[i] << std::endl;
+                  }
+                  else{
+                  std::cout << student[i] << ", ";
+                  }
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: aditya, 2023043, EVE, BTECH
+aditya, 2023043, EVE, BTECH
+
+* Foreach
+#+begin_src cpp :results output
+
+  #include <iostream>
+
+  int main(){
+
+          std::string sub[5] = {"dc", "ip", "maths", "ihci", "com"};
+
+          for ( std::string i : sub ){
+                  std::cout << i << std::endl;
+          }
+
+          return 0;
+  }
+
+#+end_src
+
+#+RESULTS:
+: dc
+: ip
+: maths
+: ihci
+: com
+
+* Array as function argument
+
+- This should logically work but it gives an error since when we pass an array, it decomposes into a pointer
+#+begin_src cpp
+
+  #include <iostream>
+
+  double getTotal(double arr[]);
+
+  int main(){
+
+          double prices[] = {12,23,34,45};
+          double total = getTotal(prices);
+
+          return 0;
+  }
+  double getTotal(double arr[]){
+
+          double total = 0;
+          for ( double price : arr ){
+                  total += price;
+          }	
+          return total;
+
+  }
+
+#+end_src
+
+#+RESULTS:
+
+- But this works
+#+begin_src cpp
+
+  #include <iostream>
+
+  double getTotal(double arr[], int size);
+
+  int main(){
+
+          double prices[] = {12,23,34,45};
+          double total = getTotal(prices,sizeof(prices)/sizeof(prices[0]));
+          std::cout << total;
+
+          return 0;
+  }
+  double getTotal(double arr[],int size){
+
+          double total = 0;
+          for ( int i = 0; i <= size; i++ ){
+                  total += arr[i];
+          }	
+          return total;
+
+  }
+
+#+end_src
+
+#+RESULTS:
+: 114

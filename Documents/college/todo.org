@@ -1,0 +1,5 @@
+#+title: College Todo
+#+author: Aditya Gautam
+
+* TODO Maths Basis and Dimension Revision
+SCHEDULE: <2023-10-14 Sat +1d>

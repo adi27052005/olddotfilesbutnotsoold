@@ -1,0 +1,80 @@
+#+title: Gd Resources
+
+* TABLE OF CONTENTS :toc:
+- [[#work-distrubution][Work Distrubution]]
+- [[#chip-shortage-the-global-technology-crisis][Chip Shortage: The Global Technology Crisis]]
+  - [[#raspberry-pi][Raspberry Pi]]
+  - [[#grammarly][Grammarly]]
+  - [[#final][Final]]
+
+* Work Distrubution
+
+1) Introduction and Problem Statement:
+
+    Provide an overview of the chip shortage crisis.
+    Explain why it's a global technology crisis.
+    Highlight its significance and impact on various industries.
+
+2) Causes of the Chip Shortage:
+
+    Divide this section into subtopics like "Pandemic Impact," "Supply Chain Disruptions," "Increased Demand," and "Geopolitical Factors."
+    Each team member can focus on one subtopic to provide a detailed analysis.
+
+3) Impact on Different Industries:
+
+    Assign each team member a specific industry or sector (e.g., automotive, consumer electronics, healthcare) affected by the chip shortage.
+    Describe how the crisis has affected production, sales, and innovation in that industry.
+
+4) Economic and Geopolitical Implications:
+
+    Discuss the economic consequences of the chip shortage on both a global and national scale.
+    Explore the geopolitical aspects, such as the role of certain countries in semiconductor production.
+
+5) Technology Solutions and Innovations:
+
+    Examine how the technology sector is responding to the crisis.
+    Discuss innovations in chip manufacturing, supply chain optimization, and alternatives to traditional semiconductor production.
+
+6) Government and Industry Responses:
+
+    Analyze the measures governments and industry leaders have taken to address the chip shortage.
+    Highlight policies, incentives, and collaborations aimed at resolving the crisis.
+
+7) Future Outlook and Mitigation Strategies:
+
+    Discuss the expected trajectory of the chip shortage crisis.
+    Explore strategies for mitigating future chip shortages, such as increased domestic production or diversifying supply chains.
+
+8) Conclusion and Recommendations:
+
+    Summarize the key points discussed in the presentation.
+    Offer recommendations for businesses, governments, and consumers to navigate and alleviate the chip shortage crisis.
+
+* Chip Shortage: The Global Technology Crisis
+
+** Raspberry Pi
+|----------------+-------------------+-------------------+--------------------|
+| Type           | Lowest            | Highest           | Current            |
+|----------------+-------------------+-------------------+--------------------|
+| Amazon         | $89 (Nov 11 2020) | $122 (Jan 9 2021) | $100 (Sep 14 2023) |
+| 3rd party new  | $81 (Dec 17 2020) | $290 (Feb 9 2022) | $89 (Sep 14 2023)  |
+| 3rd party used | $78 (Sep 8 2023)  | $267 (Feb 6 2022) | $85 (Sep 14 2023)  |
+|----------------+-------------------+-------------------+--------------------|
+
+Good Afternoon Everyone, I am Aditya Gautam. This is group number 24 and the topic for today's group dicussion is "Chip Shortage: The Global Technology Crisis". We are gathered here today to discuss a crisis that has sent shockwaves through the global technology landscape, impacting industries, economies, and daily life as we know it. The chip shortage, also known as the semiconductor shortage, refers to a global crisis characterized by a shortage of microchips and other semiconductor components used in a wide range of electronic devices, from smartphones and laptops to automobiles and medical equipment. Take my own experience, for instance. I wanted to purchase a Raspberry Pi—a versatile mini-computer—about a year ago. However, I encountered a dual challenge. Not only was it hard to find one, but when I did, the prices had skyrocketed due to the chip shortage. 3rd party sellers were capitalizing on the situation, abusing the shortage to sell these devices at exorbitant prices. This personal encounter underscores the widespread nature of this crisis. It's not just about tech giants; it's about individuals, small businesses, and entire industries grappling with supply chain disruptions, increased prices, and the challenges posed by opportunistic sellers. Join us today as we unravel the causes, consequences, and potential solutions to this global technology crisis, one that hits close to home for many. Let's explore how the chip shortage is reshaping our tech-driven world.
+
+Good afternoon, everyone. I'm Aditya Gautam, representing Group 24. Our topic today: 'Chip Shortage: The Global Technology Crisis.' This crisis, characterized by a severe scarcity of microchips, impacts industries worldwide. Take my experience, for instance. I tried to purchase a Raspberry Pi a year ago but faced a dual challenge: finding one was tough, and when I did, prices had soared due to the chip shortage. This crisis isn't limited to tech giants; it affects individuals, small businesses, and entire industries. Today, we explore the causes, consequences, and potential solutions to this global issue. Join us in understanding how the chip shortage is reshaping our tech-driven world.
+
+** Grammarly
+
+Good Afternoon, Everyone. I am Aditya Gautam. This is group number 24, and the topic for today's group discussion is "Chip Shortage: The Global Technology Crisis." We are gathered here today to discuss a crisis that has sent shockwaves through the global technology landscape, impacting industries, economies, and daily life as we know it. The chip shortage, also known as the semiconductor shortage, refers to a global crisis characterized by a shortage of microchips and other semiconductor components used in a wide range of electronic devices, from smartphones and laptops to automobiles and medical equipment. Take my own experience, for instance. About a year ago, I wanted to purchase a Raspberry Pi—a versatile mini-computer. However, I encountered a dual challenge. Not only was it hard to find one, but when I did, the prices had skyrocketed due to the chip shortage. 3rd party sellers were capitalizing on the situation, abusing the shortage to sell these devices at exorbitant prices. This personal encounter underscores the widespread nature of this crisis. It's not just about tech giants; it's about individuals, small businesses, and entire industries grappling with supply chain disruptions, increased prices, and the challenges posed by opportunistic sellers. Join us today as we unravel the causes, consequences, and potential solutions to this global technology crisis. Let us explore how the chip shortage is reshaping our tech-driven world.
+
+** Final
+
+1. Hello Everyone, I am Aditya Gautam and we are gathered here today to discuss a crisis that has sent shockwaves through the global technology landscape, impacting industries, economies, and daily life as we know it.
+
+2. The chip shortage or semiconductor shortage is a worldwide crisis characterised by a shortage of microchips and other semiconductor components used in various electronic devices, from smartphones and laptops to automobiles and medical equipment.
+
+3. Take my own experience, for instance. About a year ago, I wanted to purchase a versatile mini-computer like the raspberry pi to host my personal home server. However, I encountered a dual challenge. Not only was it hard to find one, but when I did, the prices had skyrocketed due to the chip shortage. 3rd party sellers were capitalising on the situation, abusing the shortage to sell these devices at exorbitant prices. This personal encounter underscores the widespread nature of this crisis.
+
+4. It's not just about tech giants; it's about individuals, small businesses, and entire industries grappling with supply chain disruptions. Join us today as we unravel the causes, consequences, and potential solutions to this global technology crisis.

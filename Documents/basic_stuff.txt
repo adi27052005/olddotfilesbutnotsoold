@@ -1,0 +1,1 @@
+sudo pacman -S binutils make gcc pkg-config fakeroot base-devel xdg-utils

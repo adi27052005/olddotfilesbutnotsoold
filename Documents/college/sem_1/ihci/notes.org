@@ -1,0 +1,25 @@
+#+title: Notes
+
+* TABLE OF CONTENTS :toc:
+- [[#ch1-what-is-interaction-design][CH1. WHAT IS INTERACTION DESIGN]]
+  - [[#bad-design-eg-problem-with-voice-mail-system-in-hotels][Bad Design e.g.: Problem with Voice Mail system in hotels]]
+  - [[#good-design-eg-marbe-answering-machine][Good Design e.g.: Marbe Answering Machine]]
+
+* CH1. WHAT IS INTERACTION DESIGN
+
+** Bad Design e.g.: Problem with Voice Mail system in hotels
+- It is infuriating.
+- It is confusing.
+- It is inefficient, requiring you to carry out a number of steps for basic tasks.
+- It is difficult to use.
+- It has no means of letting you know at a glance whether any messages have been left or how many there are. You have to pick up the handset to find out and then go through a series of steps to listen to them.
+- It is not obvious what to do: The instructions are provided partially by the system and partially by a card beside the phone
+
+** Good Design e.g.: Marbe Answering Machine
+- It uses familiar physical objects that indicate visually at a glance how many messages have been left.
+- It is aesthetically pleasing and enjoyable to use.
+- It requires only one-step actions to perform core tasks.
+- It is a simple but elegant design.
+- It offers less functionality and allows anyone to listen to any of the messages.
+
+=NOTE=: However, it would not be practical in a hotel setting. One of the main reasons is that it is not robust enough to be used in public places; for instance, the marbles could easily get lost or be taken as souvenirs. Also, the need to identify the user before allowing the messages to be played is essential in a hotel setting.

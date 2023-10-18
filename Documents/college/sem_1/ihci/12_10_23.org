@@ -1,0 +1,14 @@
+#+title: 12th October 2023 NOTES
+#+author: Aditya Gautam
+
+* Automatic vs Conscious Emotions
+- Emotions can be short-lived (eg: a fit of anger) or complex and long lasting (eg: jealousy)
+
+- Our emotional state changes how we think
+  * When frightened or angry, we focus narrowly and out bodies respond by tensing muscles and sweating
+  * When happy, we are less focused and our bodies relax and we become more creative and we are more prone to overlook minor problems
+
+* Desigining with the three leves in mind
+1. =Visceral= Design refers to making products look, feel and sound good
+2. =Behavioural= Design is about use, and it equates with traditional values of usability
+3. =Reflective= Design is about considering the meaning and personal value of a product

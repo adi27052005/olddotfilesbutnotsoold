@@ -1,0 +1,17 @@
+#+title: Invertible Matrix
+#+author: Aditya Gautam
+
+* Invertible Matrices
+Let A be a n x n square matrix
+** A is an invertible matrix
+** Ax = 0 has only the trivial solution
+** The equation Ax = b has atleast one unique solution for each b in R^{n}
+** A has n pivot positions
+** A row equivalent to I_{n}
+** The columns of A span R^{n}
+** A^{t} is an invertible matrix
+** The columns of A form a linearly independent set
+** The linear transformation x -> Ax is one-one
+** The linear transformation x -> Ax maps R^{n} to R^{n}
+** A has a left inverse i.e. there exists a matrix C such that CA = I_{n}
+** A has a right inverse i.e. there exists a matrix D such that DA = I_{n}

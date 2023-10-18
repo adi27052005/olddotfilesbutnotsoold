@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "FuuGSCIVjWYPHng8/gUhOm9cblvIdn9DeReYkH2RxmmjNzTT231nUtLrl5YeJVVxj7nxyY54JHHbkdqp5+kE5Q==",
+  "success": true,
+  "projectFilePath": "/home/adi/Documents/coding/cs/tutorial/tutorial.csproj",
+  "expectedPackageFiles": [
+    "/home/adi/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.11/microsoft.aspnetcore.app.ref.7.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}

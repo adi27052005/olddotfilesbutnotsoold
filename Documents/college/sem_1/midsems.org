@@ -1,0 +1,13 @@
+#+title: Midsems
+
+|---------+---------------------+-------------------+-------|
+| SUBJECT | DAY                 | VENUE             |  TIME |
+|---------+---------------------+-------------------+-------|
+| GD: COM | 21st Sept Thursday  | 102               |   3-5 |
+| COM     | 22nd Sept Friday    | 101, 102, 201 LHC |   3-4 |
+| Maths   | 23rd Sept Saturday  | 101, 102, 201 LHC |   3-4 |
+| IHCI    | 25th Sept Monday    | 101, 102, 201 LHC | 10-11 |
+| DC      | 26th Sept Tuesday   | 101, 102, 201 LHC | 10-11 |
+| IP      | 27th Sept Wednesday | 101, 102, 201 LHC | 10-11 |
+| LAB: IP | 27th Sept Wednesday | 101, 102, 201 LHC |  11-1 |
+|---------+---------------------+-------------------+-------|

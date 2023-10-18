@@ -1,0 +1,15 @@
+/home/adi/Documents/coding/cs/tutorial/bin/Debug/net7.0/tutorial
+/home/adi/Documents/coding/cs/tutorial/bin/Debug/net7.0/tutorial.deps.json
+/home/adi/Documents/coding/cs/tutorial/bin/Debug/net7.0/tutorial.runtimeconfig.json
+/home/adi/Documents/coding/cs/tutorial/bin/Debug/net7.0/tutorial.dll
+/home/adi/Documents/coding/cs/tutorial/bin/Debug/net7.0/tutorial.pdb
+/home/adi/Documents/coding/cs/tutorial/obj/Debug/net7.0/tutorial.csproj.AssemblyReference.cache
+/home/adi/Documents/coding/cs/tutorial/obj/Debug/net7.0/tutorial.GeneratedMSBuildEditorConfig.editorconfig
+/home/adi/Documents/coding/cs/tutorial/obj/Debug/net7.0/tutorial.AssemblyInfoInputs.cache
+/home/adi/Documents/coding/cs/tutorial/obj/Debug/net7.0/tutorial.AssemblyInfo.cs
+/home/adi/Documents/coding/cs/tutorial/obj/Debug/net7.0/tutorial.csproj.CoreCompileInputs.cache
+/home/adi/Documents/coding/cs/tutorial/obj/Debug/net7.0/tutorial.dll
+/home/adi/Documents/coding/cs/tutorial/obj/Debug/net7.0/refint/tutorial.dll
+/home/adi/Documents/coding/cs/tutorial/obj/Debug/net7.0/tutorial.pdb
+/home/adi/Documents/coding/cs/tutorial/obj/Debug/net7.0/tutorial.genruntimeconfig.cache
+/home/adi/Documents/coding/cs/tutorial/obj/Debug/net7.0/ref/tutorial.dll
